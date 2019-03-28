@@ -1,0 +1,12 @@
+#!/bin/bash
+
+SCRIPT_FOLDER="$HOME/.scripts"
+SCRIPT_FILE="$SCRIPT_FOLDER/$1"
+
+if [[ -f $SCRIPT_FILE ]]; then
+	touch $SCRIPT_FILE
+else
+	echo '#!/bin/bash' > $SCRIPT_FILE
+	chmod +x $SCRIPT_FILE
+	v $SCRIPT_FILE
+fi
