@@ -1,0 +1,15 @@
+#show-read-feeds no
+auto-reload yes
+reload-time 10
+
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+
+color listnormal red default
+color listfocus blue default bold
+color listnormal_unread white black
+color listfocus_unread blue black bold
+color info red black bold
+color article cyan default
+
+browser linkhandler
+macro , open-in-browser

@@ -9,3 +9,6 @@ rsync -r /home/ducthu/.config/nvim /home/ducthu/Documents/Projects/dotFiles/
 rsync -r /home/ducthu/.config/ranger /home/ducthu/Documents/Projects/dotFiles/
 rsync -r /home/ducthu/.scripts /home/ducthu/Documents/Projects/dotFiles/
 rsync /home/ducthu/.bashrc /home/ducthu/Documents/Projects/dotFiles/
+rsync /home/ducthu/.newsboat/config /home/ducthu/Documents/Projects/dotFiles/.newsboat/config
+rsync /home/ducthu/.newsboat/urls /home/ducthu/Documents/Projects/dotFiles/.newsboat/urls
+
