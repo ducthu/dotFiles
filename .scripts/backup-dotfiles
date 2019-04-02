@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONFIG_FOLDER="$HOME/.config/"
-DOTFILES_BACKUP_FOLDER="$HOME/Documents/Projets/dotFiles/"
+DOTFILES_BACKUP_FOLDER="$HOME/Documents/Projects/dotFiles/"
 
 rsync -r /home/ducthu/.config/i3 /home/ducthu/Documents/Projects/dotFiles/
 rsync -r /home/ducthu/.config/neofetch /home/ducthu/Documents/Projects/dotFiles/
@@ -11,4 +11,5 @@ rsync -r /home/ducthu/.scripts /home/ducthu/Documents/Projects/dotFiles/
 rsync /home/ducthu/.bashrc /home/ducthu/Documents/Projects/dotFiles/
 rsync /home/ducthu/.newsboat/config /home/ducthu/Documents/Projects/dotFiles/.newsboat/config
 rsync /home/ducthu/.newsboat/urls /home/ducthu/Documents/Projects/dotFiles/.newsboat/urls
+rsync $HOME/.config/USBGuard/usbguard-applet-qt.conf $DOTFILES_BACKUP_FOLDER
 
