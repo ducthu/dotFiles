@@ -1,15 +1,19 @@
 #!/bin/bash
 
-CONFIG_FOLDER="$HOME/.config/"
-DOTFILES_BACKUP_FOLDER="$HOME/Documents/Projects/dotFiles/"
+CONFIG_FOLDER="$HOME/.config"
+DOTFILES_BACKUP_FOLDER="$HOME/Documents/Projects/dotFiles"
 
-rsync -r /home/ducthu/.config/i3 /home/ducthu/Documents/Projects/dotFiles/
-rsync -r /home/ducthu/.config/neofetch /home/ducthu/Documents/Projects/dotFiles/
-rsync -r /home/ducthu/.config/nvim /home/ducthu/Documents/Projects/dotFiles/
-rsync -r /home/ducthu/.config/ranger /home/ducthu/Documents/Projects/dotFiles/
-rsync -r /home/ducthu/.scripts /home/ducthu/Documents/Projects/dotFiles/
-rsync /home/ducthu/.bashrc /home/ducthu/Documents/Projects/dotFiles/
-rsync /home/ducthu/.newsboat/config /home/ducthu/Documents/Projects/dotFiles/.newsboat/config
-rsync /home/ducthu/.newsboat/urls /home/ducthu/Documents/Projects/dotFiles/.newsboat/urls
-rsync $HOME/.config/USBGuard/usbguard-applet-qt.conf $DOTFILES_BACKUP_FOLDER
+rsync -r $CONFIG_FOLDER/i3 $DOTFILES_BACKUP_FOLDER/
+rsync -r $CONFIG_FOLDER/neofetch $DOTFILES_BACKUP_FOLDER/
+rsync -r $CONFIG_FOLDER/nvim $DOTFILES_BACKUP_FOLDER/
+rsync -r $CONFIG_FOLDER/ranger $DOTFILES_BACKUP_FOLDER/
+rsync -r $HOME/.scripts $DOTFILES_BACKUP_FOLDER/
+rsync $HOME/.bashrc $DOTFILES_BACKUP_FOLDER/
+rsync $HOME/.newsboat/config $DOTFILES_BACKUP_FOLDER/.newsboat/config
+rsync $HOME/.newsboat/urls $DOTFILES_BACKUP_FOLDER/.newsboat/urls
+rsync $CONFIG_FOLDER/USBGuard/usbguard-applet-qt.conf $DOTFILES_BACKUP_FOLDER
 
+cd $DOTFILES_BACKUP_FOLDER
+git add -A
+git commit -am "AutoCommit sauvegarde dotFiles"
+git push
