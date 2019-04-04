@@ -14,6 +14,7 @@ rsync $HOME/.newsboat/urls $DOTFILES_BACKUP_FOLDER/.newsboat/urls
 rsync $CONFIG_FOLDER/USBGuard/usbguard-applet-qt.conf $DOTFILES_BACKUP_FOLDER
 rsync $HOME/.zshrc $DOTFILES_BACKUP_FOLDER/
 rsync $CONFIG_FOLDER/redshift/redshift.conf $DOTFILES_BACKUP_FOLDER/redshift/redshift.conf
+rsync -r $CONFIG_FOLDER/polybar $DOTFILES_BACKUP_FOLDER/
 
 cd $DOTFILES_BACKUP_FOLDER
 git add -A
