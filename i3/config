@@ -131,9 +131,9 @@ bindsym $mod+Shift+z exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+h exec i3lock-fancy && systemctl suspend, mode "default"
 
 # lock
-bindsym $mod+x exec i3lock-fancy
+bindsym $mod+x exec i3lock-fancy -p
 # shutdown
-bindsym $mod+Shift+x exec --no-startup-id $HOME/.scripts/prompt "Shutdown Now ?" "$shutdown"
+bindsym $mod+Shift+x exec --no-startup-id $HOME/.scripts/promp "Shutdown Now ?" "$shutdown"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -250,4 +250,3 @@ exec --no-startup-id megasync
 exec --no-startup-id wal -R
 exec /usr/bin/usbguard-applet-qt
 exec --no-startup-id /usr/bin/blueman-applet
-exec --no-startup-id /usr/bin/redshift-gtk
