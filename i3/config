@@ -193,8 +193,8 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 #}
 
 #GAPS
-gaps outer 10
-gaps inner 15
+gaps outer 5
+gaps inner 2
 
 # floating windows
 for_window [class="Pavucontrol"] floating enable
