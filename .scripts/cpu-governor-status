@@ -1,0 +1,10 @@
+#!/bin/sh
+
+GOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+
+
+if [ "$GOV" = "powersave" ]; then
+	echo -e "%{F#00FF00}%{F-}"
+else
+	echo -e "%{F#FF0000}%{F-}"
+fi
