@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 SCRIPT_FOLDER="$HOME/.scripts"
 SCRIPT_FILE="$SCRIPT_FOLDER/$1"
@@ -6,7 +6,7 @@ SCRIPT_FILE="$SCRIPT_FOLDER/$1"
 if [[ -f $SCRIPT_FILE ]]; then
 	touch $SCRIPT_FILE
 else
-	echo '#!/bin/bash' > $SCRIPT_FILE
-	chmod +x $SCRIPT_FILE
+	echo '#!/bin/sh' > $SCRIPT_FILE
+	chmod 0755 $SCRIPT_FILE
 	v $SCRIPT_FILE
 fi
