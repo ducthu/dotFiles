@@ -3,7 +3,7 @@
 IFACE=$(ifconfig | grep tun0 | awk '{print $1}')
 
 if [ "$IFACE" = "tun0:" ]; then
-	echo   "%{F#00FF00}%{u#00FF00} $(ifconfig tun0 | grep inet | awk '{print $2}' | cut -f2 -d ':')  $(wget http://ipecho.net/plain -O - -q | xargs geoiplookup | awk '{print $4}' | cut -f1 -d ',')%{u-}%{F-}"
+	echo   "%{F#00FF00} VPN  $(wget http://ipecho.net/plain -O - -q | xargs geoiplookup | awk '{print $4}' | cut -f1 -d ',')%{F-}"
 else
-    echo "%{F#FF0000} %{u#FF0000}VPN DISCONNECTED%{u-}%{F-}"
+    echo "%{F#FF0000} VPN DISCONNECTED%{F-}"
 fi
