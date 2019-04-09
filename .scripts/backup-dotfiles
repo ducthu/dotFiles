@@ -16,3 +16,5 @@ rsync $HOME/.zshrc $DOTFILES_BACKUP_FOLDER/
 rsync $CONFIG_FOLDER/redshift/redshift.conf $DOTFILES_BACKUP_FOLDER/redshift/redshift.conf
 rsync -r $CONFIG_FOLDER/polybar $DOTFILES_BACKUP_FOLDER/
 rsync $HOME/.Xresources $DOTFILES_BACKUP_FOLDER/
+rsync $CONFIG_FOLDER/qutebrowser/config.py $DOTFILES_BACKUP_FOLDER/qutebrowser/config.py
+
