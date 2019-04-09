@@ -25,6 +25,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'wavded/vim-stylus', {'for': ['markdown']}
 Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
 Plug 'gko/vim-coloresque' "Color Preview
+Plug 'dylanaraps/wal.vim'
 
 "Javascript"
 Plug 'pangloss/vim-javascript'
@@ -39,6 +40,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
+colorscheme wal
 set bg=dark
 set mouse=a
 
@@ -74,7 +76,7 @@ set mouse=a
 "General Mappings
 	"save
 	nmap <leader>, :w<CR>
-
+	map <C-s> :w<CR>
 
 
 " Disables automatic commenting on new line
@@ -98,3 +100,7 @@ set mouse=a
 
 " Nerd Tree
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTre") && b:NERDTree.isTabTree()) | q | endif
+	map <C-n> :NERDTreeToggle<CR>
+
+" Cmd perso
+	map <C-q> :q<CR>

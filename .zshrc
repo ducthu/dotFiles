@@ -36,12 +36,12 @@ prompt pure
 BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/nvim
 export READER=/usr/bin/zathura
-FILE=/usr/bin/ranger
+export FILE=/usr/bin/ranger
 TERMINAL=/usr/bin/urxvt
 
 export PATH=$PATH"$HOME/.scripts"
 export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-export PYTHONPATH="/usr/lib/python3.7/site-packages/"
+#export PYTHONPATH="/usr/lib/python3.7/site-packages/"
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
