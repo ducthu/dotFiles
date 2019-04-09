@@ -1,9 +1,12 @@
 #!/bin/sh
 
 PLAYER_STATUS=$(playerctl status 2> /dev/null)
+CHECK_SPOTIFY=$(playerctl metadata mpris:trackid | cut -c1-7)
 
-if [ "$PLAYER_STATUS" = 'Playing' ]; then
-	echo "$(playerctl metadata artist) - $(playerctl metadata title)"
-elif [ "$PLAYER_STATUS" = 'Paused' ]; then
-	echo "$(playerctl metadata artist) - $(playerctl metadata title)"
+if [ "$CHECK_SPOTIFY" = "spotify" ]; then
+	if [ "$PLAYER_STATUS" = 'Playing' ]; then
+		echo "%{F#00FF00}%{F-} $(playerctl metadata artist) - $(playerctl metadata title)"
+	elif [ "$PLAYER_STATUS" = 'Paused' ]; then
+		echo "%{F#00FF00}%{F-} $(playerctl metadata artist) - $(playerctl metadata title)"
+	fi
 fi
