@@ -49,7 +49,7 @@ font-1 = "FontAwesome:style=Regular;2"
 
 modules-left = i3
 modules-center = date
-modules-right = player pulseaudio powermenu
+modules-right = record player pulseaudio powermenu
 
 tray-position = left
 tray-padding = 2
@@ -524,3 +524,9 @@ type = custom/script
 interval = 1
 format = <label>
 exec = $HOME/.scripts/playctl_status
+
+[module/record]
+type = custom/script
+interval = 1
+exec = $HOME/.scripts/recording_status
+click-left = $HOME/.scripts/record
