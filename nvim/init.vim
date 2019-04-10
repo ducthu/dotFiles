@@ -11,6 +11,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim', {'for': ['html']}
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 Plug 'othree/html5.vim', {'for': 'html'} "Html5 support
 Plug 'digitaltoad/vim-pug', {'for': ['jade', 'pug']} "Pug/Jade Support
