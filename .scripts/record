@@ -1,0 +1,62 @@
+#!/bin/sh
+
+updateIcon(){ \
+	echo "$1" > /tmp/recordingicon
+}
+
+video() { \
+	ffmpeg -y \
+	-loglevel quiet \
+	-f x11grab \
+	-video_size $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+	-i $DISPLAY \
+	-framerate 60 \
+	-c:v libx264 -preset ultrafast \
+	"$HOME/Vidéos/records/video-$(date '+%d-%m-%y-%H:%M-%S').mkv" & \
+	echo $! > /tmp/recordingpid
+	updateIcon ""
+}
+
+screenCast(){ \
+	ffmpeg \
+	-loglevel quiet \
+	-f x11grab \
+	-video_size $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+	-framerate 60 \
+	-i $DISPLAY \
+	-f alsa -i default \
+	-c:v libx264 -preset ultrafast -c:a aac \
+	"$HOME/Vidéos/records/screenCast-$(date '+%d-%m-%y-%H:%M-%S').mkv" & \
+	echo $! > /tmp/recordingpid
+	updateIcon "  "
+}
+
+killRecording(){
+	recpid=$(cat /tmp/recordingpid)
+	kill -15 "$recpid"
+	rm -f /tmp/recordingpid
+	updateIcon ""
+	sleep 3
+	kill -9 "$recpid"
+	exit
+}
+
+askrecording() { \
+	choice=$(printf "screencast\\nvideo" | dmenu -i -p "Select recording mode:")
+	case "$choice" in
+		screencast) screenCast;;
+		video) video;;
+	esac
+}
+
+asktoend() { \
+	response=$(printf "No\\nYes" | dmenu -i -p "Recording still active. End recording?") &&
+	[ "$response" = "Yes" ] &&  killRecording
+}
+
+case $1 in
+	screenCast) screenCast;;
+	video) video;;
+	kill) killRecording;;
+	*) ([ -f /tmp/recordingpid ] && asktoend && exit ) || askrecording;;
+esac
