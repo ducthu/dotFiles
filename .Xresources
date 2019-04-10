@@ -28,14 +28,13 @@ URxvt.cursorColor: pink
 URxvt.cursorUnderline: false
 
 URxvt.urgentOnBell: true
-URxvt*visualBell: true
 
 URxvt.borderless: true
 URxvt.multichar_encoding: true
 
 
 !! scroll
-URxvt.scrollTtyOutput: false
+URxvt.scrollTtyOutput: true
 URxvt.scrollWithBuffer: true
 Urxvt.scrollTtyKeypress: true
 
