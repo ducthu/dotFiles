@@ -1,10 +1,14 @@
 #!/bin/sh
 
-ICON=$(cat /tmp/recordingicon)
+if [ -f /tmp/recordingicon ]; then
 
-if [ -f /tmp/recordingpid ]; then
-	if [ "$ICON" ]; then
-		echo %{F#FF0000}$ICON%{F-}
+	ICON = $(cat /tmp/recordingicon)
+	if [ -f /tmp/recordingpid ]; then
+		if [ "$ICON" ]; then
+			echo %{F#FF0000}$ICON%{F-}
+		fi
+	else
+		echo ""
 	fi
 else
 	echo ""
